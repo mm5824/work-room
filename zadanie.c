@@ -24,30 +24,30 @@ void UnionOfArrays(int A[], int B[], int a, int b)
 	int U[a+b];
 	for (i=0; i<a; i++) 
 	{
-        U[x]=A[i];
-        x++;
-    }
-
-    for (i=0; i<b; i++) 
+	        U[x]=A[i];
+	        x++;
+	}
+	for (i=0; i<b; i++) 
 	{
-        y=0;
-        for (j=0; j<a; j++) 
+	        y=0;
+	        for (j=0; j<a; j++) 
 		{
-            if (B[i]==A[j])
-                y=1;
-        }
+			if (B[i]==A[j])
+	                y=1;
+		}
 
-        if (y==0) 
+		        if (y==0) 
+			{
+				U[x]=B[i];
+				x++;
+			}
+		}
+
+		printf("\nUnion:");
+		for (i=0; i<x; i++) 
 		{
-            U[x]=B[i];
-            x++;
-        }
-    }
-
-    printf("\nUnion:");
-    for (i=0; i<x; i++) {
-        printf("%d ", U[i]);
-    }
+			printf("%d ", U[i]);
+		}
 }
 
 int main () {
