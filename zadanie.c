@@ -29,25 +29,23 @@ void UnionOfArrays(int A[], int B[], int a, int b)
 	}
 	for (i=0; i<b; i++) 
 	{
-	        y=0;
-	        for (j=0; j<a; j++) 
+		y=0;
+		for (j=0; j<a; j++) 
 		{
 			if (B[i]==A[j])
 	                y=1;
 		}
-
-		        if (y==0) 
-			{
-				U[x]=B[i];
-				x++;
-			}
-		}
-
-		printf("\nUnion:");
-		for (i=0; i<x; i++) 
+		if (y==0) 
 		{
-			printf("%d ", U[i]);
+			U[x]=B[i];
+			x++;
 		}
+	}
+
+	for (i=0; i<x; i++) 
+	{
+		printf("%d ", U[i]);
+	}
 }
 
 int main () {
@@ -55,8 +53,8 @@ int main () {
 	int B[]={2,3,5,6};
 	int a=6;
 	int b=4;
+	printf("Intersection:");
 	IntersectionOfArrays(A, B, a, b);
+	printf("\nUnion:");
 	UnionOfArrays(A, B, a, b);
-//	printf("%d  ", IntersectionOfArrays(A, B, a, b));
-	
 }
